@@ -1,0 +1,18 @@
+.footerContainer {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 52px 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 210px;
+}
+.footerLinks {
+  display: flex;
+  gap: 32px;
+}
+.privacy {
+  display: flex;
+  gap: 32px;
+}

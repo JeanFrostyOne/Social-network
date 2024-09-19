@@ -1,0 +1,28 @@
+.navbar {
+  height: 114px;
+  padding: 16px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.navMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.icons img {
+  cursor: pointer;
+}
+.notificationAndEllipse {
+  display: flex;
+  align-items: center;
+}
