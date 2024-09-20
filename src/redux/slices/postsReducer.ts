@@ -1,7 +1,26 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../axiosInstance";
 
-const initialState = {
+export type PostT = {
+  id: number;
+  title: string;
+  body: string;
+  tags: string[];
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
+  views: number;
+  userId: number;
+};
+
+interface initialStateI {
+  postsLoading: boolean;
+  postsError: string;
+  posts: PostT[];
+}
+
+const initialState: initialStateI = {
   postsLoading: false,
   postsError: "",
   posts: [],
@@ -22,7 +41,7 @@ export const postsSlice = createSlice({
     builder.addCase(getAllPosts.fulfilled, (state, action) => {
       state.postsLoading = false;
       state.postsError = "";
-      state.posts = action.payload;
+      state.posts = action.payload.posts;
     });
     builder.addCase(getAllPosts.rejected, (state, action) => {
       state.postsLoading = false;
