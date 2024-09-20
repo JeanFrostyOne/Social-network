@@ -101,10 +101,10 @@ export const userSlice = createSlice({
       state.currentUser = action.payload;
       setToken(action.payload.token);
     });
-    builder.addCase(loginUser.rejected, (state, action) => {
+    builder.addCase(loginUser.rejected, (state) => {
       state.error = "check your login / password";
     });
-    builder.addCase(getUserById.pending, (state, action) => {
+    builder.addCase(getUserById.pending, (state) => {
       state.userLoading = true;
     });
     builder.addCase(getUserById.fulfilled, (state, action) => {
@@ -112,7 +112,7 @@ export const userSlice = createSlice({
       state.user = action.payload;
       state.error = "";
     });
-    builder.addCase(getUserById.rejected, (state, action) => {
+    builder.addCase(getUserById.rejected, (state) => {
       state.userLoading = false;
       state.error = "user not found";
     });
